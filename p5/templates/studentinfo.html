@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information Page</title>
+</head>
+<body>
+{% if s_list %}
+<table border="2">
+<thead>
+<th>Roll No.</th>
+<th>Name</th>
+<th>Date of Birth</th>
+<th>Marks</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Address</th>
+</thead>
+{% for s in s_list %}
+<tr>
+<td>{{ s.rollno }}</td>
+<td>{{ s.name }}</td>
+<td>{{ s.dob }}</td>
+<td>{{ s.marks }}</td>
+<td>{{ s.email }}</td>
+<td>{{ s.phone }}</td>
+<td>{{ s.address }}</td>
+</tr>
+{% endfor %}
+</table>
+    {% else %}
+    <p>Ay Student Information Not Found</p>
+{% endif %}
+<a href="/home">Home</a>
+</body>
+</html>
