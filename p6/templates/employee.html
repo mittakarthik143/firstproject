@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Page</title>
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+</head>
+<body>
+{% if e_list %}
+<table border="2" class="table">
+<thead>
+<th>Employee Number</th>
+<th>Employee Name</th>
+<th>Employee Salary</th>
+<th>Employee Address</th>
+</thead>
+{% for e in e_list %}
+<tr>
+<td>{{ e.eno }}</td>
+<td>{{ e.ename }}</td>
+<td>{{ e.esal }}</td>
+<td>{{ e.eadd }}</td>
+</tr>
+{% endfor %}
+</table>
+    {% else %}
+    <p>Employee Data Not Found</p>
+{% endif %}
+</body>
+</html>
